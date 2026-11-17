@@ -1,0 +1,20 @@
+// [slug, label, width in, height in, plain-English note, batch, show in camera tables (1/0)]
+module.exports = [
+  ["8x10", "8 × 10 inch", 8, 10, "a classic framed photo", 1, 1],
+  ["11x14", "11 × 14 inch", 11, 14, "a larger framed portrait or landscape", 1, 1],
+  ["16x20", "16 × 20 inch", 16, 20, "a gallery-style wall print", 1, 1],
+  ["20x30", "20 × 30 inch", 20, 30, "a statement print over a sofa or bed", 1, 0],
+  ["24x36", "24 × 36 inch", 24, 36, "a poster-size print", 1, 1],
+  ["30x40", "30 × 40 inch", 30, 40, "a large canvas or framed print", 1, 0],
+  ["36x48", "36 × 48 inch", 36, 48, "a large feature print for an office or lobby", 1, 1],
+  ["40x60", "40 × 60 inch", 40, 60, "an oversized canvas or metal print", 2, 0],
+  ["48x72", "48 × 72 inch (4 × 6 ft)", 48, 72, "a large wall graphic", 1, 1],
+  ["48x96", "48 × 96 inch (4 × 8 ft)", 48, 96, "a full wall panel or backdrop", 1, 1],
+  ["72x120", "72 × 120 inch (6 × 10 ft)", 72, 120, "a wall mural for a lobby or restaurant", 2, 1],
+  ["96x144", "96 × 144 inch (8 × 12 ft)", 96, 144, "a very large mural or event backdrop", 2, 0],
+  ["a4", "A4", 8.27, 11.69, "a standard document-size print", 1, 0],
+  ["a3", "A3", 11.69, 16.54, "a small poster print", 1, 1],
+  ["a2", "A2", 16.54, 23.39, "a poster print", 1, 1],
+  ["a1", "A1", 23.39, 33.11, "a large poster print", 2, 0],
+  ["a0", "A0", 33.11, 46.81, "an extra-large poster print", 2, 0],
+].map(([slug, label, w, h, note, b, t]) => ({ slug, label, w, h, note, b, t }));

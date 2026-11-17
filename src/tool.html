@@ -1,0 +1,53 @@
+<div class="card" id="up">
+<label class="drop" id="drop">
+<input type="file" id="file" accept="image/*" aria-label="Choose a photo">
+<b>Choose a photo</b>
+<span>or drag it here. JPG, PNG, HEIC, WebP</span>
+</label>
+<div class="err" id="err" role="alert"></div>
+<details>
+<summary>No file? Enter the pixel size instead</summary>
+<div class="row">
+<label class="f">Width (px)<input type="number" id="mw" inputmode="numeric" min="1" placeholder="6000"></label>
+<label class="f">Height (px)<input type="number" id="mh" inputmode="numeric" min="1" placeholder="4000"></label>
+</div>
+<div class="chips" id="cams"></div>
+</details>
+</div>
+
+<div id="res" aria-live="polite">
+<div class="card" id="set">
+<div class="sp"><h2 style="margin:0">Print size</h2>
+<div class="seg" role="group" aria-label="Units"><button id="uin" aria-pressed="true">in</button><button id="ucm" aria-pressed="false">cm</button></div></div>
+<div class="row">
+<label class="f">Width<input type="number" id="w" inputmode="decimal" min="0.5" step="any"></label>
+<label class="f">Height<input type="number" id="h" inputmode="decimal" min="0.5" step="any"></label>
+</div>
+<div class="chips" id="pre" aria-label="Common sizes"></div>
+<h2 style="margin:22px 0 0;font-size:15px;color:var(--mute);font-weight:500">Viewed from</h2>
+<div class="chips" id="dst"></div>
+</div>
+
+<div class="card verdict" id="vd">
+<div class="vh"><span class="num" id="ppi">0</span><span class="unit">pixels per inch at this size</span></div>
+<div class="vt" id="vt"></div>
+<p class="meta" id="vp" style="margin:0"></p>
+<div class="meter"><i id="mf"></i><u id="mk"></u></div>
+<div class="mm"><span>0</span><span id="nl"></span><span>400+</span></div>
+</div>
+
+<div class="card">
+<h2>Scale preview</h2>
+<div id="sv"></div>
+<p class="cap" id="sc"></p>
+</div>
+
+<div class="card">
+<h2>Largest size by quality</h2>
+<table><tbody id="tb"></tbody></table>
+</div>
+
+<div class="card"><h2>What next?</h2><div class="chips"><button type="button" class="chip next" data-i="print">Get a print quote</button><button type="button" class="chip next" data-i="lab">Find a pro lab for this size</button><button type="button" class="chip next" data-i="equip">Equipment to print this myself</button></div></div>
+
+</div>
+
