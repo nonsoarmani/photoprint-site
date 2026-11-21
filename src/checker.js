@@ -40,7 +40,7 @@ function load(f){
  r.onerror=()=>{er.textContent="We couldn’t read that file. Try another photo."};
  r.onload=()=>{
   const im=new Image();
-  im.onerror=()=>{er.textContent="Your browser can’t open this format. Export it as JPG or PNG and try again."};
+  im.onerror=()=>{er.textContent="Your browser can’t open this format. Export or share the photo as a JPG or PNG and try again."};
   im.onload=()=>{
    S.pw=im.naturalWidth;S.ph=im.naturalHeight;S.name=f.name;S.w=0;
    const k=Math.min(1,900/Math.max(S.pw,S.ph)),c=document.createElement("canvas");

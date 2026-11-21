@@ -1,6 +1,7 @@
 // Planning estimates in USD, [low, high]. These are starting assumptions, NOT quotes.
 // Replace them with real supplier prices as you collect them.
 module.exports = {
+  updated: "November 2026",
   types: {
     home: { name: "Home or studio photo printing (prints up to 17 to 24 in)", items: [
       ["Professional photo inkjet printer", 1300, 4500], ["Calibrated monitor and computer", 800, 2500],

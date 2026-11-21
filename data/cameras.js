@@ -2,7 +2,8 @@
 // Check them against the maker's spec sheet before you publish a new wave.
 const raw = [
   ["iPhone 12, 13 and 14 (12 MP)", 4032, 3024, 1],
-  ["iPhone 14 Pro, 15 and 16 (48 MP mode)", 8064, 6048, 1],
+  ["iPhone 14 Pro, 15 and 16 (48 MP mode)", 8064, 6048, 1, "Most iPhones save 24 MP photos by default. To capture the full 48 MP, turn on Resolution Control (ProRAW & Resolution Control on Pro models) in Settings > Camera > Formats, then choose a Max option in the Camera app. Only the main 1x camera shoots 48 MP."],
+  ["iPhone 15 and 15 Pro (default 24 MP)", 5712, 4284, 1, "This is the default size for the main camera on iPhone 15 models. The ultrawide and telephoto cameras save 12 MP (4032 × 3024)."],
   ["Samsung Galaxy S23 Ultra (200 MP mode)", 16320, 12240, 2],
   ["Canon EOS R5", 8192, 5464, 1],
   ["Canon EOS R6 Mark II", 6000, 4000, 1], ["Canon EOS R10", 6000, 4000, 1],
@@ -22,11 +23,12 @@ const raw = [
   raw.push([mp + " megapixel photo", w, h, 1]);
 });
 const groups = {};
-raw.forEach(([name, pw, ph, b]) => {
+raw.forEach(([name, pw, ph, b, note]) => {
   const maker = /megapixel/.test(name) ? "generic" : name.split(" ")[0];
   const key = maker + pw + "x" + ph;
   (groups[key] = groups[key] || { maker, pw, ph, names: [], b }).names.push(name);
   groups[key].b = Math.min(groups[key].b, b);
+  if (note) groups[key].note = note;
 });
 module.exports = Object.values(groups).map(g => {
   const list = g.names.length > 1 ? g.names.slice(0, -1).join(", ") + " and " + g.names.slice(-1) : g.names[0];
